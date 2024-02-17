@@ -229,6 +229,7 @@ begin
           end_xadc_process      <= '0';
           interupt_success      <= '0';
           if(interupt_drp = '1') then
+            reg_drp_addr      <= reg_drp_addr_user;
             interupt_mode     <= '1';
             interupt_success  <= '1';
             state_xadc        <= SetMode;
