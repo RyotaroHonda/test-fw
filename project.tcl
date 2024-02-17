@@ -253,7 +253,7 @@ if { $validate_required } {
 }
 
 # Create project
-create_project ${_xil_proj_name_} ./${_xil_proj_name_} -part xc7k160tffg676-2
+create_project ${_xil_proj_name_} ./build -part xc7k160tffg676-2
 
 # Set the directory path for the new project
 set proj_dir [get_property directory [current_project]]
@@ -1135,3 +1135,7 @@ move_dashboard_gadget -name {drc_1} -row 2 -col 0
 move_dashboard_gadget -name {timing_1} -row 0 -col 1
 move_dashboard_gadget -name {utilization_2} -row 1 -col 1
 move_dashboard_gadget -name {methodology_1} -row 2 -col 1
+
+# User-Tcl
+source user-setting.tcl
+exit
