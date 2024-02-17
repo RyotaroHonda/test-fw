@@ -263,8 +263,9 @@ begin
         when WaitRead =>
           reg_drp_enable        <= '0';
           if(drp_ready = '1') then
-            reg_drp_dout        <= drp_dout;
-            if(interupt_mode = '0') then
+            if(interupt_mode = '1') then
+              reg_drp_dout        <= drp_dout;
+            else
               xadcTempOut       <= drp_dout(kWidthDrpDOut-1 downto 4);
             end if;
             state_xadc          <= Finalize;
